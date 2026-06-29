@@ -1,95 +1,98 @@
+//Этот скрипт отвечает за анимации появления при скролле и интерактивное переключение кейсов/решений с динамической перерисовкой инфографики.
+
+```javascript
 // =========================================================================
-// 1. АНИМАЦИЯ ПЛАВНОГО ПОЯВЛЕНИЯ ПРИ СКРОЛЛЕ (Intersection Observer)
+// 1. АНИМАЦИЯ ПОЯВЛЕНИЯ ЭЛЕМЕНТОВ ПРИ СКРОЛЛЕ
 // =========================================================================
 const animElements = document.querySelectorAll('.anim-fade');
 
 const observerOptions = {
-    root: null,         // Отслеживаем относительно области видимости браузера
-    threshold: 0.15,    // Элемент начнет появляться, когда виден на 15%
+    root: null,
+    threshold: 0.15,
     rootMargin: "0px"
 };
 
 const scrollObserver = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            // Добавляем класс видимости
             entry.target.classList.add('visible');
-            // Удаляем из отслеживания, чтобы анимация сработала только 1 раз
             observer.unobserve(entry.target);
         }
     });
 }, observerOptions);
 
-// Запуск наблюдения за каждым элементом
 animElements.forEach(el => scrollObserver.observe(el));
 
-
 // =========================================================================
-// 2. ИНТЕРАКТИВНЫЙ ГРАФИК И СМЕНА ВАЛЮТ / ТАРИФОВ
+// 2. ИНТЕРАКТИВНОЕ ПЕРЕКЛЮЧЕНИЕ ГОТОВЫХ РЕШЕНИЙ (КЕЙСОВ)
 // =========================================================================
-// База данных для графиков
-const chartData = {
-    btc: {
-        usd: "| $ 4,528 USD",
-        crypto: "| 1,44,528 BTC",
+const caseData = {
+    landing: {
+        title: "Готовая структура под нишу услуг.",
+        before: "| До: 1.2% конверсия",
+        after: "| После: 5.4% лидогенерация",
+        desc1: "Разработанный и упакованный прототип сайта с интерактивным опросом (квизом). Такая структура позволяет сократить стоимость привлечения клиента из контекстной рекламы на 35% за счет геймификации процесса заказа.",
+        desc2: "Решение полностью оптимизировано под мобильные телефоны, протестировано на скорость загрузки и готово к внедрению под ваш бренд за 5 дней.",
         path: "M 0 160 Q 120 180 200 100 T 400 50 T 500 20",
         dot1: { cx: 200, cy: 100 },
         dot2: { cx: 400, cy: 50 }
     },
-    eth: {
-        usd: "| $ 2,840 USD",
-        crypto: "| 32,910 ETH",
-        path: "M 0 100 Q 150 40 250 140 T 420 90 T 500 110",
+    shop: {
+        title: "Платформа для Интернет-Магазинов.",
+        before: "| До: 1.8% конверсия",
+        after: "| После: 4.1% выкуп корзин",
+        desc1: "Готовый быстрый интернет-магазин на современном стеке разработки с умной фильтрацией товаров, авто-расчетом доставки CDEK/Боксберри и удобной покупкой в 1 клик.",
+        desc2: "Включает настроенную систему сквозной аналитики и личный кабинет покупателя. Идеально для быстрого старта продаж физических товаров.",
+        path: "M 0 120 Q 150 40 250 140 T 420 90 T 500 40",
         dot1: { cx: 250, cy: 140 },
         dot2: { cx: 420, cy: 90 }
     },
-    ton: {
-        usd: "| $ 7.35 USD",
-        crypto: "| 845,200 TON",
-        path: "M 0 180 Q 80 120 180 150 T 350 60 T 500 40",
+    corporate: {
+        title: "Имиджевые корпоративные сайты.",
+        before: "| До: Низкий уровень доверия",
+        after: "| После: Высокий статус бренда",
+        desc1: "Многостраничные технологичные порталы для компаний, которые хотят закрепиться на рынке. Архитектура спроектирована под высокие стандарты SEO-продвижения Яндекса и Google.",
+        desc2: "Внедрена удобная панель управления (CMS), позволяющая вашим сотрудникам редактировать любые тексты и добавлять новости без привлечения программистов.",
+        path: "M 0 180 Q 80 120 180 150 T 350 60 T 500 30",
         dot1: { cx: 180, cy: 150 },
         dot2: { cx: 350, cy: 60 }
     }
 };
 
-function updateChart(currencyKey) {
-    // 1. Переключение активных классов на кнопках
+function updateChart(caseKey) {
+    // Переключение активного класса на табах
     const buttons = document.querySelectorAll('.tab-btn');
     buttons.forEach(btn => btn.classList.remove('active'));
-    
-    // Ищем кнопку, которая вызвала событие, по тексту клика
-    const eventTarget = window.event.target;
-    if (eventTarget) eventTarget.classList.add('active');
+    if (window.event && window.event.target) {
+        window.event.target.classList.add('active');
+    }
 
-    // 2. Обновление текстовых плашек над графиком
-    document.getElementById('rate-usd').innerText = chartData[currencyKey].usd;
-    document.getElementById('rate-crypto').innerText = chartData[currencyKey].crypto;
+    // Текстовое обновление данных кейса
+    document.getElementById('rate-usd').innerText = caseData[caseKey].before;
+    document.getElementById('rate-crypto').innerText = caseData[caseKey].after;
+    document.getElementById('case-title').innerText = caseData[caseKey].title;
+    document.getElementById('case-desc-1').innerText = caseData[caseKey].desc1;
+    document.getElementById('case-desc-2').innerText = caseData[caseKey].desc2;
 
-    // 3. Изменение геометрии SVG-кривой (эффект перетекания)
-    document.getElementById('chart-path').setAttribute('d', chartData[currencyKey].path);
+    // Плавная деформация SVG-линии графика
+    document.getElementById('chart-path').setAttribute('d', caseData[caseKey].path);
 
-    // 4. Перемещение интерактивных точек на графике
+    // Смещение маркерных точек
     const d1 = document.getElementById('chart-dot-1');
     const d2 = document.getElementById('chart-dot-2');
     
-    d1.setAttribute('cx', chartData[currencyKey].dot1.cx);
-    d1.setAttribute('cy', chartData[currencyKey].dot1.cy);
+    d1.setAttribute('cx', caseData[caseKey].dot1.cx);
+    d1.setAttribute('cy', caseData[caseKey].dot1.cy);
     
-    d2.setAttribute('cx', chartData[currencyKey].dot2.cx);
-    d2.setAttribute('cy', chartData[currencyKey].dot2.cy);
+    d2.setAttribute('cx', caseData[caseKey].dot2.cx);
+    d2.setAttribute('cy', caseData[caseKey].dot2.cy);
 }
 
-// =========================================================================
-// 3. ДЕКОРАТИВНЫЙ ИНТЕРФЕЙС: Генерация псевдо-хэша (анимация кода)
-// =========================================================================
-const hexElement = document.querySelector('.matrix-hex');
-if (hexElement) {
-    setInterval(() => {
-        const chars = '0123456789ABCDEF';
-        let mockHash = '0x';
-        for(let i=0; i<4; i++) mockHash += chars[Math.floor(Math.random()*16)];
-        mockHash += '...';
-        for(let i=0; i<4; i++) mockHash += chars[Math.floor(Math.random()*16)];
-        hexElement.innerText = mockHash;
-    }, 1500); // Меняем строку каждые 1.5 секунды
-}
+// Отправка формы лидов
+document.getElementById('leadForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const btn = this.querySelector('button');
+    btn.innerText = 'Заявка принята! Свяжемся с вами';
+    btn.style.backgroundColor = '#4d7c0f';
+    this.reset();
+});
