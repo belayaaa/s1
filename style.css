@@ -1,5 +1,5 @@
 /* =========================================================================
-   1. ПОДКЛЮЧЕНИЕ ШРИФТОВ И БАЗОВЫЕ СБРОСЫ
+   1. НАСТРОЙКИ СВЕТЛОЙ ТЕМЫ И БАЗОВЫЕ СБРОСЫ
    ========================================================================= */
 @import url('https://googleapis.com');
 
@@ -12,30 +12,30 @@
 }
 
 body {
-    background-color: #060709; /* Глубокий матовый черный */
-    color: #ffffff;
+    background-color: #f8fafc; /* Светлый чистый фон */
+    color: #0f172a; /* Глубокий темный цвет текста для читаемости */
     padding-top: 100px;
     overflow-x: hidden;
     
-    /* Тонкая футуристичная сетка на фоне, как на макете */
+    /* Тонкая сетка на светлом фоне, как на макете */
     background-image: 
-        linear-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+        linear-gradient(rgba(15, 23, 42, 0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(15, 23, 42, 0.02) 1px, transparent 1px);
     background-size: 40px 40px;
 }
 
-/* Эффект легкого сканирования ЭЛТ-монитора поверх всего сайта */
+/* Мягкий эффект монитора */
 .crt-overlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.15) 50%);
+    background: linear-gradient(rgba(0, 0, 0, 0.02) 50%, rgba(0, 0, 0, 0.05) 50%);
     background-size: 100% 4px;
     z-index: 999;
     pointer-events: none;
-    opacity: 0.4;
+    opacity: 0.5;
 }
 
 /* =========================================================================
@@ -49,11 +49,11 @@ body {
     position: fixed;
     top: 0;
     width: 100%;
-    background: rgba(6, 7, 9, 0.85);
+    background: rgba(248, 250, 252, 0.9);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     z-index: 100;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+    border-bottom: 1px solid rgba(15, 23, 42, 0.05);
 }
 
 .logo {
@@ -61,21 +61,21 @@ body {
     font-weight: 800;
     letter-spacing: -1px;
 }
-.logo span { color: #bfff00; }
+.logo span { color: #7cb800; } /* Сбалансированный лаймово-зеленый для светлого фона */
 
 .nav-links a {
-    color: #8a8d93;
+    color: #64748b;
     text-decoration: none;
     margin: 0 20px;
     font-size: 0.95rem;
     font-weight: 600;
     transition: color 0.3s ease;
 }
-.nav-links a:hover { color: #ffffff; }
+.nav-links a:hover { color: #0f172a; }
 
 .btn-nav {
-    background-color: #bfff00;
-    color: #000000;
+    background-color: #7cb800;
+    color: #ffffff;
     padding: 12px 26px;
     border-radius: 30px;
     text-decoration: none;
@@ -85,7 +85,7 @@ body {
 }
 .btn-nav:hover {
     transform: translateY(-2px);
-    box-shadow: 0 0 20px rgba(191, 255, 0, 0.4);
+    box-shadow: 0 8px 20px rgba(124, 184, 0, 0.3);
 }
 
 /* =========================================================================
@@ -103,7 +103,7 @@ body {
 }
 
 .crypto-badge {
-    color: #bfff00;
+    color: #7cb800;
     font-size: 0.85rem;
     font-weight: 800;
     letter-spacing: 2px;
@@ -118,9 +118,9 @@ body {
     letter-spacing: -2px;
 }
 
-.lime-text { color: #bfff00; }
+.lime-text { color: #7cb800; }
 
-/* Блок пользователей с аватарами */
+/* Блок пользователей */
 .users-block {
     display: flex;
     align-items: center;
@@ -136,29 +136,29 @@ body {
     width: 45px;
     height: 45px;
     border-radius: 50%;
-    border: 3px solid #060709;
+    border: 3px solid #f8fafc;
     margin-right: -12px;
     object-fit: cover;
 }
 
 .users-info strong { display: block; font-size: 1.2rem; font-weight: 800; }
-.users-info span { font-size: 0.85rem; color: #8a8d93; }
+.users-info span { font-size: 0.85rem; color: #64748b; }
 
-/* Информационный подтекст со стрелкой */
+/* Подтекст */
 .hero-subtext {
     display: flex;
     gap: 20px;
     align-items: center;
-    max-width: 480px;
-    border-top: 1px solid rgba(255,255,255,0.08);
+    max-width: 520px;
+    border-top: 1px solid rgba(15, 23, 42, 0.08);
     padding-top: 30px;
 }
 
 .arrow-circle {
     width: 50px;
     height: 50px;
-    background: #bfff00;
-    color: #000;
+    background: #7cb800;
+    color: #fff;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -168,10 +168,10 @@ body {
     flex-shrink: 0;
 }
 
-.hero-subtext p { color: #8a8d93; font-size: 0.95rem; line-height: 1.5; }
+.hero-subtext p { color: #475569; font-size: 0.95rem; line-height: 1.6; }
 
 /* =========================================================================
-   4. АНИМИРОВАННАЯ КИБЕР-ПАНЕЛЬ (SVG ВМЕСТО КАРТИНКИ)
+   4. SVG АНИМАЦИОННАЯ ПАНЕЛЬ
    ========================================================================= */
 .hero-visual {
     display: flex;
@@ -182,10 +182,9 @@ body {
 .cyber-panel {
     width: 100%;
     max-width: 380px;
-    filter: drop-shadow(0 0 25px rgba(191,255,0,0.12));
+    filter: drop-shadow(0 15px 30px rgba(0,0,0,0.05));
 }
 
-/* Движение сканирующей неоновой полосы */
 .scan-bar {
     animation: scanMove 4s linear infinite;
 }
@@ -197,7 +196,6 @@ body {
     100% { y1: 420; y2: 420; opacity: 0; }
 }
 
-/* Вращение центрального элемента */
 .pulse-circle {
     transform-origin: 200px 200px;
     animation: rotateCircle 10s linear infinite;
@@ -208,18 +206,17 @@ body {
     to { transform: rotate(360deg); }
 }
 
-/* Мигание статуса сети */
 .blink-node {
     animation: nodeBlink 1.5s ease infinite alternate;
 }
 
 @keyframes nodeBlink {
-    0% { fill: #bfff00; filter: drop-shadow(0 0 2px #bfff00); }
-    100% { fill: #4f6600; filter: drop-shadow(0 0 0px transparent); }
+    0% { fill: #7cb800; }
+    100% { fill: #a3e635; }
 }
 
 /* =========================================================================
-   5. СЕКЦИЯ ПРЕИМУЩЕСТВ (FEATURES SECTION)
+   5. ПРЕИМУЩЕСТВА (FEATURES SECTION)
    ========================================================================= */
 .features-section { 
     padding: 100px 8%; 
@@ -234,7 +231,7 @@ body {
 }
 
 .features-header h2 { font-size: 2.8rem; font-weight: 800; line-height: 1.2; letter-spacing: -1px;}
-.features-header p { color: #8a8d93; font-size: 1rem; }
+.features-header p { color: #475569; font-size: 1rem; }
 
 .features-grid {
     display: grid;
@@ -244,35 +241,37 @@ body {
 }
 
 .feature-card {
-    background: rgba(255, 255, 255, 0.02);
-    border: 1px solid rgba(255,255,255,0.05);
+    background: #ffffff;
+    border: 1px solid rgba(15, 23, 42, 0.05);
     border-radius: 24px;
     padding: 40px 30px;
     min-height: 240px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.01);
 }
 
-.card-num { font-size: 1.1rem; font-weight: 800; color: #8a8d93; display: block; margin-bottom: 20px;}
+.card-num { font-size: 1.1rem; font-weight: 800; color: #94a3b8; display: block; margin-bottom: 20px;}
 .feature-card h3 { font-size: 1.4rem; font-weight: 800; line-height: 1.3; }
 
-/* Активная фирменная лаймовая карточка */
+/* Активная фирменная карточка */
 .feature-card.active-lime {
-    background-color: #bfff00;
-    color: #000000;
+    background-color: #7cb800;
+    color: #ffffff;
     border: none;
-    box-shadow: 0 20px 40px rgba(191, 255, 0, 0.15);
+    box-shadow: 0 15px 30px rgba(124, 184, 0, 0.25);
 }
-.active-lime .card-num { color: #000000; opacity: 0.6; }
-.active-lime p { margin-top: 15px; font-size: 0.95rem; font-weight: 600; line-height: 1.5;}
-.card-link { margin-top: 25px; text-decoration: none; color: #000; font-weight: 800; font-size: 0.95rem;}
+.active-lime .card-num { color: #ffffff; opacity: 0.6; }
+.active-lime p { margin-top: 15px; font-size: 0.95rem; font-weight: 600; line-height: 1.5; color: #f1f5f9;}
+.card-link { margin-top: 25px; text-decoration: none; color: #ffffff; font-weight: 800; font-size: 0.95rem;}
 
 /* =========================================================================
-   6. СЕКЦИЯ С ИНТЕРАКТИВНЫМ ГРАФИКОМ (TRUSTED SECTION)
+   6. СЕКЦИЯ КЕЙСОВ И ГОТОВЫХ РЕШЕНИЙ
    ========================================================================= */
 .trusted-section { 
     padding: 100px 8% 80px; 
+    background-color: #f1f5f9; /* Мягкое контрастное выделение секции */
 }
 
 .trusted-container {
@@ -282,7 +281,6 @@ body {
     align-items: center;
 }
 
-/* Табы переключения тарифов/валют */
 .currency-tabs {
     display: flex;
     gap: 10px;
@@ -290,9 +288,9 @@ body {
 }
 
 .tab-btn {
-    background: rgba(255,255,255,0.02);
-    border: 1px solid rgba(255,255,255,0.08);
-    color: #8a8d93;
+    background: #ffffff;
+    border: 1px solid rgba(15, 23, 42, 0.06);
+    color: #64748b;
     padding: 12px 22px;
     border-radius: 8px;
     font-size: 0.8rem;
@@ -302,19 +300,19 @@ body {
 }
 
 .tab-btn:hover, .tab-btn.active {
-    background: #bfff00;
-    color: #000;
-    border-color: #bfff00;
-    box-shadow: 0 0 15px rgba(191,255,0,0.2);
+    background: #7cb800;
+    color: #ffffff;
+    border-color: #7cb800;
+    box-shadow: 0 4px 12px rgba(124, 184, 0, 0.2);
 }
 
-/* Оболочка графика */
 .chart-wrapper {
     position: relative;
-    background: rgba(255,255,255,0.01);
-    border: 1px solid rgba(255,255,255,0.03);
+    background: #ffffff;
+    border: 1px solid rgba(15, 23, 42, 0.04);
     border-radius: 20px;
     padding: 40px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.02);
 }
 
 .chart-badge {
@@ -324,58 +322,70 @@ body {
     font-size: 0.85rem;
     font-weight: 800;
 }
-.opacity-badge { background: rgba(255,255,255,0.05); top: 20px; left: 20px;}
+.opacity-badge { background: #f8fafc; color: #ef4444; top: 20px; left: 20px;}
 .lime-badge { 
-    background: #bfff00; 
-    color: #000; 
+    background: #7cb800; 
+    color: #ffffff; 
     bottom: 40px; 
     left: 160px; 
-    box-shadow: 0 0 15px rgba(191,255,0,0.3);
+    box-shadow: 0 4px 12px rgba(124,184,0,0.3);
 }
 
 .chart-svg { width: 100%; height: auto; margin-top: 40px; }
 
-/* Анимация перетекания кривой линии и точек */
-#chart-path {
-    transition: d 0.6s cubic-bezier(0.25, 1, 0.5, 1);
-}
-#chart-dot-1, #chart-dot-2 {
-    transition: cx 0.6s ease, cy 0.6s ease;
-}
+#chart-path { transition: d 0.6s cubic-bezier(0.25, 1, 0.5, 1); }
+#chart-dot-1, #chart-dot-2 { transition: cx 0.6s ease, cy 0.6s ease; }
 
-/* Правый текстовый контент под графиком */
 .trusted-content h2 { font-size: 3rem; font-weight: 800; line-height: 1.1; margin-bottom: 15px; letter-spacing: -1px;}
-.stars { color: #bfff00; font-size: 1.2rem; margin-bottom: 25px; letter-spacing: 3px;}
-.trusted-content p { color: #8a8d93; font-size: 1rem; line-height: 1.6; margin-bottom: 20px;}
-.trusted-content .muted-text { font-size: 0.9rem; opacity: 0.6; }
+.stars { color: #7cb800; font-size: 1.2rem; margin-bottom: 25px; letter-spacing: 3px;}
+.trusted-content p { color: #475569; font-size: 1rem; line-height: 1.6; margin-bottom: 20px;}
+.trusted-content .muted-text { font-size: 0.9rem; color: #64748b; }
 
 .trusted-actions { display: flex; align-items: center; gap: 30px; margin-top: 35px; }
 .btn-lime {
-    background: #bfff00; 
-    color: #000; 
+    background: #7cb800; 
+    color: #ffffff; 
     padding: 15px 35px; 
     border-radius: 30px;
     text-decoration: none; 
     font-weight: 800; 
     transition: background 0.3s ease;
 }
-.btn-lime:hover { background: #a6dd00; }
-.ask-text { font-weight: 800; font-size: 0.95rem; cursor: pointer; color: #fff;}
+.btn-lime:hover { background: #669900; }
 
 /* =========================================================================
-   7. КЛАССЫ ДЛЯ АНИМАЦИИ ПОЯВЛЕНИЯ (INTERSECTION OBSERVER)
+   7. СЕКЦИЯ КОНТАКТОВ (ФОРМА ЗАХВАТА)
    ========================================================================= */
-.anim-fade {
-    opacity: 0;
-    transform: translateY(40px);
-    transition: opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1), transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+.contact-section {
+    padding: 100px 8%;
+    text-align: center;
+    background: #ffffff;
 }
 
-/* Срабатывает при добавлении класса через JS */
-.anim-fade.visible {
-    opacity: 1;
-    transform: translateY(0);
+.contact-container {
+    max-width: 600px;
+    margin: 0 auto;
 }
 
-/* Поочередная задержка (эффект лесенки) для карточек преимуществ */
-.features-grid .feature-card:nth-child(1) { transition-delay: 0.1s; }.features-grid .feature-card:nth-child(2) { transition-delay: 0.2s; }.features-grid .feature-card:nth-child(3) { transition-delay: 0.3s; }/* =========================================================================8. АДАПТИВНОСТЬ ПОД МОБИЛЬНЫЕ УСТРОЙСТВА (MEDIA QUERIES)========================================================================= */@media (max-width: 992px) {body { padding-top: 80px; }.navbar { padding: 20px 5%; }.hero-container, .features-header, .features-grid, .trusted-container {grid-template-columns: 1fr;gap: 40px;}.hero-text h1 { font-size: 3rem; }.hero-visual { height: auto; padding-top: 20px; }.cyber-panel { max-width: 340px; }.features-header { margin-bottom: 40px; }.trusted-section { padding-bottom: 40px; }}@media (max-width: 600px) {.nav-links { display: none; } /* Скрытие навигации на мелких экранах */.hero-text h1 { font-size: 2.3rem; }.features-header h2 { font-size: 2rem; }.trusted-content h2 { font-size: 2.2rem; }.currency-tabs { flex-wrap: wrap; }.chart-wrapper { padding: 20px; }.lime-badge { left: 40px; bottom: 20px; }}
+.contact-container h2 { font-size: 2.8rem; font-weight: 800; margin-bottom: 15px; }
+.contact-container p { color: #475569; margin-bottom: 40px; font-size: 1.05rem; }
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-form input {
+    width: 100%;
+    padding: 16px 20px;
+    background: #f8fafc;
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    border-radius: 30px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+.contact-form input:focus { border-color: #7cb800; }
+
+.contact-form .btn-lime { border: none; cursor: pointer; font-size: 1rem; }/* =========================================================================8. АНИМАЦИЯ ПОЯВЛЕНИЯ ПРИ СКРОЛЛЕ========================================================================= */.anim-fade {opacity: 0;transform: translateY(40px);transition: opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1), transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);}.anim-fade.visible {opacity: 1;transform: translateY(0);}.features-grid .feature-card:nth-child(1) { transition-delay: 0.1s; }.features-grid .feature-card:nth-child(2) { transition-delay: 0.2s; }.features-grid .feature-card:nth-child(3) { transition-delay: 0.3s; }/* =========================================================================9. ПОЛНАЯ МОБИЛЬНАЯ АДАПТАЦИЯ (MEDIA QUERIES)========================================================================= */@media (max-width: 992px) {body { padding-top: 80px; }.navbar { padding: 20px 5%; }.hero-container, .features-header, .features-grid, .trusted-container {grid-template-columns: 1fr;gap: 40px;}.hero-text h1 { font-size: 3rem; }.hero-visual { height: auto; padding-top: 20px; }.cyber-panel { max-width: 340px; }.features-header { margin-bottom: 40px; }.trusted-section { padding-bottom: 40px; }}@media (max-width: 600px) {.nav-links { display: none; } /* Скрытие ссылок на смартфонах для простоты */.hero-text h1 { font-size: 2.2rem; }.features-header h2 { font-size: 1.8rem; }.trusted-content h2 { font-size: 2rem; }.contact-container h2 { font-size: 2.1rem; }.currency-tabs { flex-wrap: wrap; }.chart-wrapper { padding: 20px; }.lime-badge { left: 40px; bottom: 20px; }}
