@@ -3,30 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NEXT_GEN // Премиальная веб-студия</title>
+    <title>NEXT_GEN // Разработка сайтов под ключ</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class="crt-overlay"></div>
-
+    <!-- Навигация -->
     <header class="navbar">
-        <div class="logo">CRYPTO<span>.</span></div>
+        <div class="logo">СТУДИЯ<span>.</span></div>
         <nav class="nav-links">
-            <a href="#about">Home</a>
-            <a href="#services">Services</a>
-            <a href="#cases">About</a>
-            <a href="#why-us">What's new?</a>
+            <a href="#about">Главная</a>
+            <a href="#services">Преимущества</a>
+            <a href="#cases">Готовые решения</a>
+            <a href="#why-us">Технологии</a>
         </nav>
-        <a href="#contact" class="btn-nav">Explore now</a>
+        <a href="#contact" class="btn-nav">Обсудить проект</a>
     </header>
 
-    <section class="hero-section">
+    <!-- Главный экран (Hero) -->
+    <section class="hero-section" id="about">
         <div class="hero-container">
             <div class="hero-text">
-                <span class="crypto-badge">KEEP YOUR MONEY SAFE !</span>
-                <h1>Best crypto <br><span class="lime-text">investing platform</span> <br>for your future.</h1>
+                <span class="crypto-badge">ГАРАНТИЯ СРОКОВ И КОНВЕРСИИ !</span>
+                <h1>Создаем сайты <br><span class="lime-text">под ключ для бизнеса</span> <br>с быстрой окупаемостью.</h1>
                 
+                <!-- Блок доверия -->
                 <div class="users-block">
                     <div class="avatar-group">
                         <img src="https://unsplash.com" alt="user">
@@ -35,109 +36,113 @@
                         <img src="https://unsplash.com" alt="user">
                     </div>
                     <div class="users-info">
-                        <strong>168K+</strong>
-                        <span>Realtime Users</span>
+                        <strong>15+ ниш</strong>
+                        <span>Готовые маркетинговые связки</span>
                     </div>
                 </div>
 
+                <!-- Подтекст со стрелкой -->
                 <div class="hero-subtext">
                     <div class="arrow-circle">↗</div>
-                    <p>Polkadot unites and secures a growing ecosystem of specialized blockchains called parachains. Apps and services on Polkadot can.</p>
+                    <p>Мы не просто пишем код, а создаем полноценный инструмент продаж. Проводим глубокий анализ конкурентов и упаковываем ваш бизнес так, чтобы клиенты покупали именно у вас.</p>
                 </div>
             </div>
 
-            <!-- Правая часть: Замена картинок на интерактивный анимированный SVG-интерфейс -->
+            <!-- Интерактивный анимированный SVG-интерфейс в светлых тонах -->
             <div class="hero-visual">
                 <div class="crypto-dashboard-svg">
                     <svg viewBox="0 0 400 450" class="cyber-panel">
-                        <!-- Сетка панели -->
-                        <rect x="10" y="10" width="380" height="430" rx="20" fill="rgba(17,19,24,0.9)" stroke="rgba(191,255,0,0.2)" stroke-width="2"/>
-                        <line x1="10" y1="80" x2="390" y2="80" stroke="rgba(191,255,0,0.1)" stroke-width="1"/>
-                        
-                        <!-- Сканирующий луч в интерфейсе -->
-                        <line class="scan-bar" x1="10" y1="0" x2="390" y2="0" stroke="rgba(191,255,0,0.4)" stroke-width="3"/>
-                        
-                        <!-- Круговая диаграмма с пульсацией -->
-                        <circle class="pulse-circle" cx="200" cy="200" r="70" fill="none" stroke="#bfff00" stroke-width="8" stroke-dasharray="300" stroke-dashoffset="70"/>
-                        <circle cx="200" cy="200" r="50" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="2"/>
-                        <text x="200" y="205" fill="#fff" font-size="16" font-weight="bold" text-anchor="middle">LIVE CORE</text>
-                        
-                        <!-- Декоративные элементы интерфейса -->
-                        <rect class="blink-node" x="40" y="30" width="12" height="12" rx="3" fill="#bfff00"/>
-                        <text x="62" y="41" fill="#8a8d93" font-size="12">NETWORK_OK</text>
-                        
-                        <rect x="40" y="340" width="320" height="50" rx="10" fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.05)"/>
-                        <text x="60" y="370" fill="#bfff00" font-size="14" font-weight="bold">TRANSACTION CODE:</text>
-                        <text class="matrix-hex" x="220" y="370" fill="#fff" font-size="14">0x7F...9A4E</text>
+                        <rect x="10" y="10" width="380" height="430" rx="20" fill="rgba(245,247,250,0.95)" stroke="rgba(111,200,0,0.2)" stroke-width="2"/>
+                        <line x1="10" y1="80" x2="390" y2="80" stroke="rgba(0,0,0,0.05)" stroke-width="1"/>
+                        <line class="scan-bar" x1="10" y1="0" x2="390" y2="0" stroke="rgba(120,210,0,0.4)" stroke-width="3"/>
+                        <circle class="pulse-circle" cx="200" cy="200" r="70" fill="none" stroke="#7cb800" stroke-width="8" stroke-dasharray="300" stroke-dashoffset="70"/>
+                        <circle cx="200" cy="200" r="50" fill="none" stroke="rgba(0,0,0,0.03)" stroke-width="2"/>
+                        <text x="200" y="205" fill="#1a1c20" font-size="16" font-weight="bold" text-anchor="middle">WEB_ENGINE</text>
+                        <rect class="blink-node" x="40" y="30" width="12" height="12" rx="3" fill="#7cb800"/>
+                        <text x="62" y="41" fill="#6b7280" font-size="12">STUDIO_STATUS: OK</text>
+                        <rect x="40" y="340" width="320" height="50" rx="10" fill="rgba(0,0,0,0.02)" stroke="rgba(0,0,0,0.05)"/>
+                        <text x="60" y="370" fill="#7cb800" font-size="14" font-weight="bold">RENDER TIME:</text>
+                        <text class="matrix-hex" x="180" y="370" fill="#1a1c20" font-size="14">0.42 ms</text>
                     </svg>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Секция преимуществ с анимацией появления (добавлен класс anim-fade) -->
+    <!-- Преимущества (с анимацией появления) -->
     <section class="features-section" id="services">
         <div class="features-header anim-fade">
-            <h2>Your trusted partner of <br>cryptocurrency.</h2>
-            <p>Polkadot unites and secures a growing ecosystem of specialized blockchains called parachains. Apps and services on Polkadot can ecosystem of specialized called.</p>
+            <h2>Надежный партнер <br>для цифрового роста.</h2>
+            <p>Мы берем на себя все этапы: от аналитики рынка до запуска рекламы. Создаем архитектуру, готовую к высоким нагрузкам и SEO-продвижению с первых дней.</p>
         </div>
 
         <div class="features-grid">
             <div class="feature-card anim-fade">
                 <span class="card-num">01.</span>
-                <h3>Service for Any <br>Level of Expertise.</h3>
+                <h3>Анализ рынка перед <br>началом разработки.</h3>
             </div>
 
             <div class="feature-card active-lime anim-fade">
                 <span class="card-num">02.</span>
-                <h3>Industry <br>best practices.</h3>
-                <p>Polkadot unites and secures a growing ecosystem of specialized blockchains called parachains.</p>
-                <a href="#" class="card-link">Learn More ➔</a>
+                <h3>Стандарты индустрии <br>и чистый код.</h3>
+                <p>Верстаем с упором на максимальную скорость загрузки и идеальное отображение на смартфонах.</p>
+                <a href="#contact" class="card-link">Узнать больше ➔</a>
             </div>
 
             <div class="feature-card anim-fade">
                 <span class="card-num">03.</span>
-                <h3>Protected <br>by insurance.</h3>
+                <h3>Полная защита и <br>поддержка 24/7.</h3>
             </div>
         </div>
     </section>
 
-    <!-- Секция с графиком и интерактивными тарифами -->
-    <section class="trusted-section" id="why-us">
+    <!-- Интерактивный блок с готовыми нишевыми решениями (Кейсами) -->
+    <section class="trusted-section" id="cases">
         <div class="trusted-container">
             
             <div class="chart-container-block anim-fade">
-                <!-- Табы валют/тарифов -->
+                <!-- Переключатели нишевых решений -->
                 <div class="currency-tabs">
-                    <button class="tab-btn active" onclick="updateChart('btc')">BTC TRADING</button>
-                    <button class="tab-btn" onclick="updateChart('eth')">ETH ASSETS</button>
-                    <button class="tab-btn" onclick="updateChart('ton')">TON ECOSYSTEM</button>
+                    <button class="tab-btn active" onclick="updateChart('landing')">ДЛЯ УСЛУГ (КВИЗ)</button>
+                    <button class="tab-btn" onclick="updateChart('shop')">МАГАЗИНЫ (E-COM)</button>
+                    <button class="tab-btn" onclick="updateChart('corporate')">КОРПОРАТИВНЫЕ</button>
                 </div>
 
                 <div class="chart-wrapper">
-                    <div class="chart-badge opacity-badge" id="rate-usd">| $ 4,528 USD</div>
-                    <div class="chart-badge lime-badge" id="rate-crypto">| 1,44,528 BTC</div>
+                    <div class="chart-badge opacity-badge" id="rate-usd">| До: 1.2% конверсия</div>
+                    <div class="chart-badge lime-badge" id="rate-crypto">| После: 5.4% лидогенерация</div>
                     
                     <svg class="chart-svg" viewBox="0 0 500 200">
-                        <!-- Интерактивная кривая, меняющая форму через JS -->
-                        <path id="chart-path" d="M 0 160 Q 120 180 200 100 T 400 50 T 500 20" fill="none" stroke="#bfff00" stroke-width="4" />
-                        <circle id="chart-dot-1" cx="200" cy="100" r="8" fill="#bfff00" />
-                        <circle id="chart-dot-2" cx="400" cy="50" r="8" fill="#bfff00" />
+                        <path id="chart-path" d="M 0 160 Q 120 180 200 100 T 400 50 T 500 20" fill="none" stroke="#7cb800" stroke-width="4" />
+                        <circle id="chart-dot-1" cx="200" cy="100" r="8" fill="#7cb800" />
+                        <circle id="chart-dot-2" cx="400" cy="50" r="8" fill="#7cb800" />
                     </svg>
                 </div>
             </div>
 
-            <div class="trusted-content anim-fade">
-                <h2>Trusted platform <br>anytime & anywhere.</h2>
+            <div class="trusted-content anim-fade" id="why-us">
+                <h2 id="case-title">Готовая структура под нишу услуг.</h2>
                 <div class="stars">★★★★★</div>
-                <p>This is a unites and secures a growing ecosystem of specialized blockchains called parachains. Apps and services on Polkadot can ecosystem of specialized called.</p>
-                <p class="muted-text">Polkadot unites and secures a growing ecosystem of specialized blockchains called parachains. Apps and services.</p>
+                <p id="case-desc-1">Разработанный и упакованный прототип сайта с интерактивным опросом (квизом). Такая структура позволяет сократить стоимость привлечения клиента из контекстной рекламы на 35% за счет геймификации процесса заказа.</p>
+                <p class="muted-text" id="case-desc-2">Решение полностью оптимизировано под мобильные телефоны, протестировано на скорость загрузки и готово к внедрению под ваш бренд за 5 дней.</p>
                 
                 <div class="trusted-actions">
-                    <a href="#contact" class="btn-lime">Learn More ➔</a>
-                    <span class="ask-text">Ask question ?</span>
+                    <a href="#contact" class="btn-lime">Заказать такое решение ➔</a>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- Форма захвата (Контакты) -->
+    <section id="contact" class="contact-section anim-fade">
+        <div class="contact-container">
+            <h2>Начнем ваш проект?</h2>
+            <p>Оставьте заявку, и мы бесплатно разработаем интерактивный прототип главного экрана для вашей ниши еще до заключения договора.</p>
+            <form id="leadForm" class="contact-form">
+                <input type="text" placeholder="Ваше имя" required>
+                <input type="tel" placeholder="Номер телефона" required>
+                <button type="submit" class="btn-lime">Получить прототип бесплатно</button>
+            </form>
         </div>
     </section>
 
