@@ -3,149 +3,160 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NEXT_GEN // Разработка сайтов под ключ</title>
+    <title>DATA LIGHT // Веб-студия под ключ</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Навигация -->
+    <!-- Шапка сайта -->
     <header class="navbar">
-        <div class="logo">СТУДИЯ<span>.</span></div>
+        <div class="logo">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ccff00" stroke-width="2">
+                <rect x="2" y="2" width="20" height="20" rx="4"/>
+                <path d="M6 12h12M12 6v12"/>
+            </svg>
+            <span>DATA LIGHT</span>
+        </div>
         <nav class="nav-links">
-            <a href="#about">Главная</a>
-            <a href="#services">Преимущества</a>
-            <a href="#cases">Готовые решения</a>
-            <a href="#why-us">Технологии</a>
+            <a href="#services">Наши услуги</a>
+            <a href="#advantages">Преимущества</a>
+            <a href="#solutions">Готовые решения</a>
+            <a href="#contact">Контакты</a>
         </nav>
-        <a href="#contact" class="btn-nav">Обсудить проект</a>
+        <a href="#contact" class="btn-contact">
+            <span>Связаться</span>
+            <span class="arrow">→</span>
+        </a>
     </header>
 
     <!-- Главный экран (Hero) -->
-    <section class="hero-section" id="about">
-        <div class="hero-container">
-            <div class="hero-text">
-                <span class="crypto-badge">ГАРАНТИЯ СРОКОВ И КОНВЕРСИИ !</span>
-                <h1>Создаем сайты <br><span class="lime-text">под ключ для бизнеса</span> <br>с быстрой окупаемостью.</h1>
-                
-                <!-- Блок доверия -->
-                <div class="users-block">
-                    <div class="avatar-group">
-                        <img src="https://unsplash.com" alt="user">
-                        <img src="https://unsplash.com" alt="user">
-                        <img src="https://unsplash.com" alt="user">
-                        <img src="https://unsplash.com" alt="user">
-                    </div>
-                    <div class="users-info">
-                        <strong>15+ ниш</strong>
-                        <span>Готовые маркетинговые связки</span>
-                    </div>
-                </div>
-
-                <!-- Подтекст со стрелкой -->
-                <div class="hero-subtext">
-                    <div class="arrow-circle">↗</div>
-                    <p>Мы не просто пишем код, а создаем полноценный инструмент продаж. Проводим глубокий анализ конкурентов и упаковываем ваш бизнес так, чтобы клиенты покупали именно у вас.</p>
-                </div>
-            </div>
-
-            <!-- Интерактивный анимированный SVG-интерфейс в светлых тонах -->
-            <div class="hero-visual">
-                <div class="crypto-dashboard-svg">
-                    <svg viewBox="0 0 400 450" class="cyber-panel">
-                        <rect x="10" y="10" width="380" height="430" rx="20" fill="rgba(245,247,250,0.95)" stroke="rgba(111,200,0,0.2)" stroke-width="2"/>
-                        <line x1="10" y1="80" x2="390" y2="80" stroke="rgba(0,0,0,0.05)" stroke-width="1"/>
-                        <line class="scan-bar" x1="10" y1="0" x2="390" y2="0" stroke="rgba(120,210,0,0.4)" stroke-width="3"/>
-                        <circle class="pulse-circle" cx="200" cy="200" r="70" fill="none" stroke="#7cb800" stroke-width="8" stroke-dasharray="300" stroke-dashoffset="70"/>
-                        <circle cx="200" cy="200" r="50" fill="none" stroke="rgba(0,0,0,0.03)" stroke-width="2"/>
-                        <text x="200" y="205" fill="#1a1c20" font-size="16" font-weight="bold" text-anchor="middle">WEB_ENGINE</text>
-                        <rect class="blink-node" x="40" y="30" width="12" height="12" rx="3" fill="#7cb800"/>
-                        <text x="62" y="41" fill="#6b7280" font-size="12">STUDIO_STATUS: OK</text>
-                        <rect x="40" y="340" width="320" height="50" rx="10" fill="rgba(0,0,0,0.02)" stroke="rgba(0,0,0,0.05)"/>
-                        <text x="60" y="370" fill="#7cb800" font-size="14" font-weight="bold">RENDER TIME:</text>
-                        <text class="matrix-hex" x="180" y="370" fill="#1a1c20" font-size="14">0.42 ms</text>
-                    </svg>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Преимущества (с анимацией появления) -->
-    <section class="features-section" id="services">
-        <div class="features-header anim-fade">
-            <h2>Надежный партнер <br>для цифрового роста.</h2>
-            <p>Мы берем на себя все этапы: от аналитики рынка до запуска рекламы. Создаем архитектуру, готовую к высоким нагрузкам и SEO-продвижению с первых дней.</p>
-        </div>
-
-        <div class="features-grid">
-            <div class="feature-card anim-fade">
-                <span class="card-num">01.</span>
-                <h3>Анализ рынка перед <br>началом разработки.</h3>
-            </div>
-
-            <div class="feature-card active-lime anim-fade">
-                <span class="card-num">02.</span>
-                <h3>Стандарты индустрии <br>и чистый код.</h3>
-                <p>Верстаем с упором на максимальную скорость загрузки и идеальное отображение на смартфонах.</p>
-                <a href="#contact" class="card-link">Узнать больше ➔</a>
-            </div>
-
-            <div class="feature-card anim-fade">
-                <span class="card-num">03.</span>
-                <h3>Полная защита и <br>поддержка 24/7.</h3>
-            </div>
-        </div>
-    </section>
-
-    <!-- Интерактивный блок с готовыми нишевыми решениями (Кейсами) -->
-    <section class="trusted-section" id="cases">
-        <div class="trusted-container">
+    <section class="hero">
+        <div class="hero-content">
+            <h1><span class="brand-name">DATA LIGHT</span><br>Разработка сайтов<br>для вашего бизнеса</h1>
             
-            <div class="chart-container-block anim-fade">
-                <!-- Переключатели нишевых решений -->
-                <div class="currency-tabs">
-                    <button class="tab-btn active" onclick="updateChart('landing')">ДЛЯ УСЛУГ (КВИЗ)</button>
-                    <button class="tab-btn" onclick="updateChart('shop')">МАГАЗИНЫ (E-COM)</button>
-                    <button class="tab-btn" onclick="updateChart('corporate')">КОРПОРАТИВНЫЕ</button>
-                </div>
-
-                <div class="chart-wrapper">
-                    <div class="chart-badge opacity-badge" id="rate-usd">| До: 1.2% конверсия</div>
-                    <div class="chart-badge lime-badge" id="rate-crypto">| После: 5.4% лидогенерация</div>
-                    
-                    <svg class="chart-svg" viewBox="0 0 500 200">
-                        <path id="chart-path" d="M 0 160 Q 120 180 200 100 T 400 50 T 500 20" fill="none" stroke="#7cb800" stroke-width="4" />
-                        <circle id="chart-dot-1" cx="200" cy="100" r="8" fill="#7cb800" />
-                        <circle id="chart-dot-2" cx="400" cy="50" r="8" fill="#7cb800" />
-                    </svg>
-                </div>
+            <div class="tag-cloud">
+                <span class="tag">Маркетинговый анализ</span>
+                <span class="tag">Готовые решения</span>
+                <span class="tag">Высокая конверсия</span>
+                <span class="tag">SEO-оптимизация</span>
             </div>
 
-            <div class="trusted-content anim-fade" id="why-us">
-                <h2 id="case-title">Готовая структура под нишу услуг.</h2>
-                <div class="stars">★★★★★</div>
-                <p id="case-desc-1">Разработанный и упакованный прототип сайта с интерактивным опросом (квизом). Такая структура позволяет сократить стоимость привлечения клиента из контекстной рекламы на 35% за счет геймификации процесса заказа.</p>
-                <p class="muted-text" id="case-desc-2">Решение полностью оптимизировано под мобильные телефоны, протестировано на скорость загрузки и готово к внедрению под ваш бренд за 5 дней.</p>
-                
-                <div class="trusted-actions">
-                    <a href="#contact" class="btn-lime">Заказать такое решение ➔</a>
+            <a href="#contact" class="btn-action">
+                <span>Оставить заявку</span>
+                <span class="arrow">→</span>
+            </a>
+        </div>
+        
+        <div class="hero-visual">
+            <!-- Стилизованная 3D-модель / Иллюстрация из кода -->
+            <div class="cyber-brain-mock">
+                <div class="core-glow"></div>
+                <div class="orbit-line"></div>
+                <div class="nodes-grid">
+                    <span></span><span></span><span></span><span></span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Форма захвата (Контакты) -->
-    <section id="contact" class="contact-section anim-fade">
-        <div class="contact-container">
-            <h2>Начнем ваш проект?</h2>
-            <p>Оставьте заявку, и мы бесплатно разработаем интерактивный прототип главного экрана для вашей ниши еще до заключения договора.</p>
-            <form id="leadForm" class="contact-form">
-                <input type="text" placeholder="Ваше имя" required>
-                <input type="tel" placeholder="Номер телефона" required>
-                <button type="submit" class="btn-lime">Получить прототип бесплатно</button>
-            </form>
+    <!-- Секция: Наши услуги -->
+    <section class="services-section" id="services">
+        <h2 class="section-title">Наши услуги</h2>
+        
+        <div class="services-grid">
+            <div class="service-card lime-card">
+                <div class="card-info">
+                    <h3>Landing Page<br>с квизом</h3>
+                    <p>Продающие одностраничные сайты с интерактивными опросами. Идеально для быстрого привлечения клиентов в сфере услуг.</p>
+                </div>
+            </div>
+
+            <div class="service-card dark-card">
+                <div class="card-info">
+                    <h3>Корпоративные<br>сайты</h3>
+                    <p>Многостраничные технологичные решения для компаний, создающие сильный имидж бренда и готовые к SEO-продвижению.</p>
+                </div>
+            </div>
+
+            <div class="service-card dark-card">
+                <div class="card-info">
+                    <h3>Интернет-<br>магазины</h3>
+                    <p>Быстрый e-commerce на современном стеке. Умные фильтры, корзина и интеграция платежных систем в 1 клик.</p>
+                </div>
+            </div>
+
+            <div class="service-card lime-card wide-card">
+                <div class="card-info">
+                    <h3>Готовые бизнес-решения (вместо кейсов)</h3>
+                    <p>Вам не нужно ждать месяцы разработки. Мы накопили аналитику по 15+ популярным нишам бизнеса и спроектировали структуры сайтов, которые гарантированно приносят заявки с первого дня запуска рекламы.</p>
+                </div>
+                <div class="card-visual-box">
+                    <!-- Декоративный элемент сферы, как на макете -->
+                    <div class="wireframe-sphere"></div>
+                </div>
+            </div>
+
+            <div class="service-card dark-card link-card" id="solutions">
+                <div class="card-info">
+                    <h3>Архитектура<br>и код</h3>
+                    <p>Чистая верстка с адаптацией под любые смартфоны. Скорость загрузки до 1.5 секунд по Google PageSpeed.</p>
+                </div>
+                <div class="card-badge">PRO_STACK</div>
+            </div>
         </div>
     </section>
 
-    <script src="script.js"></script>
+    <!-- Секция: Преимущества -->
+    <section class="advantages-section" id="advantages">
+        <h2 class="section-title">Преимущества</h2>
+
+        <div class="advantages-grid">
+            <div class="adv-row border-bottom">
+                <div class="adv-item block-num">
+                    <span class="huge-number">05+</span>
+                    <span class="num-label">дней на запуск сайта</span>
+                </div>
+                <div class="adv-item block-num">
+                    <span class="huge-number">100%</span>
+                    <span class="num-label">мобильная адаптивность</span>
+                </div>
+                <div class="adv-item text-block">
+                    <h4>Фиксированный<br>бюджет</h4>
+                    <p>Стоимость прописывается в договоре и не меняется в процессе работы.</p>
+                </div>
+                <div class="adv-item text-block">
+                    <h4>Высокая<br>скорость</h4>
+                    <p>Сдаем проекты строго в срок без задержек.</p>
+                </div>
+            </div>
+
+            <div class="adv-row" id="contact">
+                <div class="adv-item block-num">
+                    <span class="huge-number">0 руб</span>
+                    <span class="num-label">прототип до договора</span>
+                </div>
+                <div class="adv-item text-block">
+                    <h4>Бесплатный<br>маркетинг-анализ</h4>
+                    <p>Изучим ваших конкурентов еще до старта работ.</p>
+                </div>
+                <div class="adv-item text-block">
+                    <h4>Современный<br>стек</h4>
+                    <p>Никаких тяжелых конструкторов — только чистый, быстрый код.</p>
+                </div>
+                <div class="adv-item text-block">
+                    <h4>Контроль качества<br>на каждом этапе</h4>
+                    <p>Проверяем тексты, верстку и адаптив перед запуском.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="adv-footer">
+            <a href="#contact" class="btn-action">
+                <span>Оставить заявку</span>
+                <span class="arrow">→</span>
+            </a>
+        </div>
+    </section>
+
 </body>
 </html>
